@@ -8,6 +8,9 @@ class CarBuilderImpl implements CarBuilder {
 
     private Car car = new Car();
 
+    CarBuilderImpl() {
+    }
+
     @Override
     public CarBuilder setName(String name) {
         car.setName(name);
