@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.elasticsearch.core.geo.GeoPoint;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-public interface CarRepository extends ElasticsearchRepository<Car, Long> {
+public interface CarRepository extends ElasticsearchRepository<Car, String> {
 
     Car findOneByName(String name);
 
