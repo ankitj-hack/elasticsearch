@@ -119,7 +119,7 @@ public class AirplaneTest extends ElasticsearchApplicationTests {
     private void findAirplanesByMultipleLocationsSortedByLocationWithTemplate() {
         log.info("--- Find airplanes by multiple locations sorted by location with template");
 
-        String distance = "1000km";
+        String distance = "100km";
         double latitude = 27d;
         double longitude = 0;
 
@@ -151,7 +151,7 @@ public class AirplaneTest extends ElasticsearchApplicationTests {
                                                                                                 filterLocationZ));
 
         GeoDistanceSortBuilder sortLocation = SortBuilders.geoDistanceSort("dimensions.location")
-                                                          .point(0, 0)
+                                                          .point(latitude, 0)
                                                           .order(SortOrder.ASC);
         SearchQuery searchQuery = new NativeSearchQueryBuilder().withQuery(nestedQueryX)
                                                                 .withQuery(nestedQueryY)
